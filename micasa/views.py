@@ -7,20 +7,20 @@ from .models import Familiar
 # Create your views here.
 
 
-def pagina (request):
-    familiar1=Familiar("Gabriel",28)
-    familiar2=Familiar("Daniel",42)
-    familiar3=Familiar("German",38)
+def Familiar (request):
+    familiar1=Familiar(nombre="Gabriel", edad=28)
+    familiar2=Familiar(nombre="Daniel", edad=42)
+    familiar3=Familiar(nombre="German", edad=38)
+    
+
 
     archivo=open("C:/Users/Matias/Desktop/Entorno1/Nueva/Coderhouse/Templates/template1.html")
 
     template=Template(archivo.read())
 
     archivo.close()
-    contexto=Context(familiar1)
-    contexto1=Context(familiar2)
-    contexto2=Context(familiar3)
-    documento=template.render(contexto1)
+   
+    documento=template.render()
     return HttpResponse(documento)
     
     
